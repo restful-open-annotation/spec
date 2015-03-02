@@ -17,4 +17,8 @@ This respository created as a placeholder for materials and discussion related t
   * form a graph
   * have arbitrary associated data
 
+## Minimal JSON-LD context
+
+<script src="https://gist.github.com/spyysalo/a80389cd0d1a65feaeba.js"></script>
+
 Some relevant stuff (some to be migrated): https://github.com/spyysalo/restful-oa, https://github.com/spyysalo/restful-oa/wiki
