@@ -11,5 +11,10 @@ This respository created as a placeholder for materials and discussion related t
   * Allow other RDF serializations
 * Stick to existing standards and best practices
 * Simple, minimal API
+  * Core resources: collection of annotations and individual annotation
+* Follow rough consensus on representation: annotations ...
+  * are standoff
+  * form a graph
+  * have arbitrary associated data
 
 Some relevant stuff (some to be migrated): https://github.com/spyysalo/restful-oa, https://github.com/spyysalo/restful-oa/wiki
