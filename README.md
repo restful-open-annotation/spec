@@ -19,6 +19,9 @@ This respository created as a placeholder for materials and discussion related t
 
 ## Minimal JSON-LD context
 
-<script src="https://gist.github.com/spyysalo/a80389cd0d1a65feaeba.js"></script>
+https://gist.github.com/spyysalo/a80389cd0d1a65feaeba
 
-Some relevant stuff (some to be migrated): https://github.com/spyysalo/restful-oa, https://github.com/spyysalo/restful-oa/wiki
+## Stuff to be migrated here
+
+* https://github.com/spyysalo/restful-oa
+* https://github.com/spyysalo/restful-oa/wiki
