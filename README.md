@@ -1,6 +1,6 @@
-# RESTful Open Annotation service specification
+# RESTful Open Annotation API specification
 
-This respository created as a placeholder for materials and discussion related to the specification of RESTful Open Annotation services. Actual content largely TODO, but there is some preliminary material in the [wiki](https://github.com/restful-open-annotation/spec/wiki).
+This respository created as a placeholder for materials and discussion related to the specification of a RESTful Open Annotation API. Actual content largely TODO, but there is some preliminary material in the [wiki](https://github.com/restful-open-annotation/spec/wiki).
 
 ## Aims / goals / design
 
