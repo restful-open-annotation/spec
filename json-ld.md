@@ -15,7 +15,7 @@ RESTful Open Annotation API.
 The benefits of JSON-LD include
 
 * It is [JSON](http://json.org): easy to read and write, and
-  increasingly the *de facto* standard language of web APIs.
+  increasingly the *de facto* standard [language of web APIs](http://www.google.com/trends/explore#q=XML+API%2C+JSON+API).
 * It is [RDF](http://en.wikipedia.org/wiki/Resource_Description_Framework): 
   the language of [Linked Data](http://en.wikipedia.org/wiki/Linked_data), allowing the use of extensive existing resources.
 * It adds [links](http://en.wikipedia.org/wiki/Hyperlink) to JSON, making it possible to write better [RESTful](http://en.wikipedia.org/wiki/Representational_state_transfer) JSON APIs.
