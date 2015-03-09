@@ -151,7 +151,7 @@ person (or software) identified by `http://example.org/users/smp` at
 
 In more detail, the OA model defines four terms for recording who (or
 what) created each annotation and when: `annotatedBy`, `annotatedAt`,
-`serializedBy` and `serializedBy`.
+`serializedBy` and `serializedAt`.
 
 The `By` terms identify the person or software that created the
 annotation (`annotatedBy`) and the one that created the data
