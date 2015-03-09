@@ -61,7 +61,11 @@ other things.
 While these are all important issues, we can get started with much
 less. Below is a minimal "core" of the context.
 
-<script src="https://gist.github.com/spyysalo/05252c6d818a2143b085.js"></script>
+    "@context": {
+      "oa" :       "http://www.w3.org/ns/oa#",
+      "body" :     { "@id": "oa:hasBody" },
+      "target" :   { "@id": "oa:hasTarget", "@type": "@id" }
+    }
 
 The first line defines `oa` to be a <span class="hint--top"
 data-hint="Like a namespace prefix in XML or a CURIE">prefix</span>
