@@ -8,7 +8,9 @@ title: Quickstart
 The RESTful Open Annotation API provides a simple way to share
 annotations online. 
 
-As the name suggests, the API is [REST]()-style and based on [Open
+As the name suggests, the API is
+[REST](http://en.wikipedia.org/wiki/Representational_state_transfer)-style
+and based on [Open
 Annotation](http://www.openannotation.org/spec/core/). The API uses
 [JSON-LD](http://json-ld.org) to represent resources.
 
