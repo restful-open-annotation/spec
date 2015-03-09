@@ -89,12 +89,12 @@ hyperlinks to standard JSON, which lacks them.
 ## Full context definition
 
 The full context definition for the RESTful Open Annotation API is
-available from <http://nlplab.org/ns/TODO>. It is recommended that
-systems using the API use this context, for example by referencing it
-as follows:
+available from <http://nlplab.org/ns/restoa-context-20150307.json>.
+It is recommended that systems using the API use this context, for
+example by referencing it as follows:
 
     {
-      "@context": "http://nlplab.org/ns/TODO",
+      "@context": "http://nlplab.org/ns/restoa-context-20150307.json",
       ...
     }
 
