@@ -12,7 +12,7 @@ for using the API, which is simple and self-documenting. (You might
 want to see the [quickstart](quickstart.html) document instead.)
 
 On the other hand, if you want to implement a RESTful OA server using
-the API, you'll probably need all the boring detail below.
+the API, you'll probably need all the detail below.
 
 ## Overview
 
