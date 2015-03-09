@@ -16,7 +16,7 @@ jump straight to the [context definition](#full-context-definition).
 ## Introduction
 
 JSON documents use names such as `parent`, which are short but
-ambiguous: for example, *parent* can refer to the mother or father of
+ambiguous: for example, "parent" can refer to the mother or father of
 a person, or the containing data item in a hierarchical model.
 
 By contrast, Linked Data uses URIs such as
