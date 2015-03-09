@@ -50,9 +50,9 @@ documents to recover the short forms.
 
 ## Core OA context 
 
-RESTful OA uses <span class="hint--top" data-hint="Namely, the W3C Web
-Annotation WG version">a version</span> of the recommended
-[Open Annotation
+RESTful OA uses a context based on <span class="hint--top"
+data-hint="Namely, the W3C Web Annotation WG version">a 
+version</span> of the recommended [Open Annotation
 context](http://www.openannotation.org/spec/core/publishing.html). The
 full context defines names for talking about motivations for
 annotating, styling for display, and source document caching, among
