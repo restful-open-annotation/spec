@@ -71,6 +71,8 @@
         $('#spec-content').annotator();
 
         document_uri = window.location.origin + window.location.pathname;
+	// directory root and index.html should be treated the same
+	document_uri.replace(/\/index\.html$/, '/');
         $('#spec-content').annotator('addPlugin', 'Store', {
           // The endpoint of the store on your server.
           prefix: 'http://weaver.nlplab.org:9321',
