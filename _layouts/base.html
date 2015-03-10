@@ -12,6 +12,15 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <!-- jQuery required for annotator.js -->
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <!-- jQuery migrate required for jQuery > 1.8 -->
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <!-- annotator.js core -->
+    <script src="http://assets.annotateit.org/annotator/v1.2.5/annotator-full.min.js"></script>
+    <!-- annotator.js plugins -->
+    <script src="http://assets.annotateit.org/annotator/v1.2.5/annotator.store.min.js"></script>
+    <link rel="stylesheet" href="http://assets.annotateit.org/annotator/v1.2.5/annotator.min.css">
   </head>
   <body>
     <div class="wrapper">
@@ -37,7 +46,7 @@
 	<div><a href="api-detail.html">API details</a></div>
 	<div><a href="tools.html">Tools</a></div>
       </header>
-      <section>
+      <section id="spec-content">
 
 {{ content }}
 
@@ -47,15 +56,39 @@
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-60355901-1");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+      try {
+        var pageTracker = _gat._getTracker("UA-60355901-1");
+        pageTracker._trackPageview();
+      } catch(err) {}
+    </script>
+    <script>
+      jQuery(function ($) {
+        $('#spec-content').annotator();
+
+        document_uri = window.location.origin + window.location.pathname;
+        $('#spec-content').annotator('addPlugin', 'Store', {
+          // The endpoint of the store on your server.
+          prefix: 'http://weaver.nlplab.org:9321',
+
+	  // Attach the uri of the current page to all annotations
+          // to allow search.
+          annotationData: {
+            'uri': document_uri
+	  },
+
+          // This will perform a "search" action when the plugin loads. Will
+          // request the last annotations for the current url.
+          loadFromSearch: {
+            'limit': 100,
+            'uri': document_uri
+          }
+        });
+      });
+    </script>
   </body>
 </html>
