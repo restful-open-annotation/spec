@@ -16,7 +16,7 @@ jump straight to the [context definition](#full-context-definition).
 ## Introduction
 
 JSON documents use names such as `parent`, which are short but
-ambiguous: for example, *parent* can refer to the mother or father of
+ambiguous: for example, "parent" can refer to the mother or father of
 a person, or the containing data item in a hierarchical model.
 
 By contrast, Linked Data uses URIs such as
@@ -50,9 +50,9 @@ documents to recover the short forms.
 
 ## Core OA context 
 
-RESTful OA uses <span class="hint--top" data-hint="Namely, the W3C Web
-Annotation WG version">a version</span> of the recommended
-[Open Annotation
+RESTful OA uses a context based on <span class="hint--top"
+data-hint="Namely, the W3C Web Annotation WG version">a 
+version</span> of the recommended [Open Annotation
 context](http://www.openannotation.org/spec/core/publishing.html). The
 full context defines names for talking about motivations for
 annotating, styling for display, and source document caching, among
@@ -61,7 +61,11 @@ other things.
 While these are all important issues, we can get started with much
 less. Below is a minimal "core" of the context.
 
-<script src="https://gist.github.com/spyysalo/05252c6d818a2143b085.js"></script>
+    "@context": {
+      "oa" :       "http://www.w3.org/ns/oa#",
+      "body" :     { "@id": "oa:hasBody" },
+      "target" :   { "@id": "oa:hasTarget", "@type": "@id" }
+    }
 
 The first line defines `oa` to be a <span class="hint--top"
 data-hint="Like a namespace prefix in XML or a CURIE">prefix</span>
@@ -85,12 +89,12 @@ hyperlinks to standard JSON, which lacks them.
 ## Full context definition
 
 The full context definition for the RESTful Open Annotation API is
-available from <http://nlplab.org/ns/TODO>. It is recommended that
-systems using the API use this context, for example by referencing it
-as follows:
+available from <http://nlplab.org/ns/restoa-context-20150307.json>.
+It is recommended that systems using the API use this context, for
+example by referencing it as follows:
 
     {
-      "@context": "http://nlplab.org/ns/TODO",
+      "@context": "http://nlplab.org/ns/restoa-context-20150307.json",
       ...
     }
 

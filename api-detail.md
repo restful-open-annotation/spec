@@ -12,7 +12,7 @@ for using the API, which is simple and self-documenting. (You might
 want to see the [quickstart](quickstart.html) document instead.)
 
 On the other hand, if you want to implement a RESTful OA server using
-the API, you'll probably need all the boring detail below.
+the API, you'll probably need all the detail below.
 
 ## Overview
 
@@ -130,7 +130,7 @@ TODOs:
 
 ## DELETE annotation
 
-Permanently remove single annotation.
+Permanently remove a single annotation.
 
 Response: `204 No Content`
 
@@ -144,11 +144,9 @@ Example response:
 
 ## GET collection
 
-Retrieve representation of annotation collection and all annotations
-contained in the collection. The collection is represented as a
-JSON-LD [named graph](http://www.w3.org/TR/json-ld/#named-graphs).
+Retrieve representation of an annotation collection and all annotations contained in the collection.
 
-Response: `200 OK` and collection and annotations in JSON-LD.
+Response: `200 OK` and collection and annotations in JSON-LD. The collection is represented as a [named graph](http://www.w3.org/TR/json-ld/#named-graphs).
 
 Example request:
 
