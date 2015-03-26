@@ -183,6 +183,9 @@ Request:
     }
     ' {{page.apibase}}/annotations/2
 
+(If this fails, make sure the URL is for an annotation `@id` that you
+previously created -- the number "2" above is just an example.)
+
 Response:
 
     {
@@ -209,6 +212,7 @@ Request:
 Response:
 
     HTTP/1.1 204 NO CONTENT
+    ...
 
 A successful delete produces an empty response with the status code
 [204 NO CONTENT](http://en.wikipedia.org/wiki/List_of_HTTP_status_codes#2xx_Success).
