@@ -125,8 +125,12 @@ complexity with a target. However, JSON-LD also allows data to be
 
 `@id`, `@type`, `target` and `body` are the core of the model, and
 knowing these (and [`@context`](context.html)) is enough to use and
-develop for the RESTful OA API. The following sections on this page
-describe additional details of the OA model.
+develop for the RESTful OA API.
+
+The following sections describe additional details of the OA
+model. Conforming implementations of the API do not need to
+specifically support these aspects of the data model, but they must
+not reject representations involving them.
 
 ## Provenance
 
@@ -210,12 +214,12 @@ motivations](http://www.openannotation.org/spec/core/core.html#Motivations).
 With this information, a system for visualizing annotations (for
 example) could present the former annotation with a shaded background
 color shared by all annotations with the "Person" class and the latter
-as a speech bubble that shows the comment ("Typo") on mouse-over.
+as a "speech bubble" that shows the comment ("Typo") on mouse-over.
 
 (Note that the OA model does allow also conventional subclassing of
 `oa:Annotation`, so that the above information could instead be
-captured with `"@type": "oax:Classification"` and `"@type":
-"oax:Comment "`, but such classes are [not currently
+captured with e.g. `"@type": "oax:Classification"` and `"@type":
+"oax:Comment"`, but such classes are [not currently
 standardized](http://www.openannotation.org/spec/extension/).)
 
 ## Non-core modules
@@ -234,4 +238,4 @@ We have aimed to keep the RESTful OA API as simple as possible to
 assure that fully conformant clients and servers are easy to
 implement. For this reason, non-core OA modules are currently
 *excluded* from the scope of this specification, and implementations
-of the RESTful OA API do not need to support them.
+of the API do not need to support them.
