@@ -154,7 +154,12 @@ The server will respond to the above request with
       ...
     }
 
-That the server echoes back the annotation, and has added a number of fields:
+(The `@id` will have a different number when you run this. Please
+substitute the actual `@id` value that you got when running the PUT
+and DELETE examples below.)
+
+Note that the server echoes back the annotation, and has added a
+number of fields:
 
 * The unique `@id` that can be used to access the annotation via the API.
 * `@type`: the annotation type. OA annotations must be instances of `oa:Annotation`.
