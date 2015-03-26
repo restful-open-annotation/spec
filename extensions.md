@@ -72,3 +72,5 @@ yet been provided.
 * Structured error returns following e.g [JSON
   API](http://jsonapi.org/format/#errors) or
   [Eve](http://python-eve.org/features.html#data-validation)
+* Representation of annotation confedence
+* Representation of annotation license
