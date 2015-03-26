@@ -50,18 +50,25 @@ All conformant implementations must support [JSON-LD](http://json-ld.org) with t
 
 (Conversion from JSON-LD to other RDF serializations is supported by the many libraries available e.g. from <http://json-ld.org/>)
 
+<!--
 (TODO PUT/POST w/Content-Type other than application/ld+json)
+-->
 
-## Search
+## Suggested extensions
 
-## `PATCH`
+The following extensions have been suggested but no specification has
+yet been provided.
 
-## Bulk update
-
-## `DELETE` collection
-
-## Create annotation on `PUT` (upsert)
-
-## ETags, If-Match, etc.
-
-## Document store
+* Annotations as sub-collection of document collection
+* Search specification using [URI
+  templates](https://tools.ietf.org/html/rfc6570)
+* HTTP `PATCH` support using [JSON Patch](https://tools.ietf.org/html/rfc6902)
+* Bulk update using `POST` and `@graph` instead of individual annotation
+* Annotation collection deletion using `DELETE` for collection resource
+* Allow annotations to be created on `PUT` (upsert)
+* Optimistic concurrency control using
+  [ETags](http://en.wikipedia.org/wiki/HTTP_ETag)
+* Minimal RESTful document store specification
+* Structured error returns following e.g [JSON
+  API](http://jsonapi.org/format/#errors) or
+  [Eve](http://python-eve.org/features.html#data-validation)

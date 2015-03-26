@@ -1,6 +1,7 @@
 ---
 layout: base
 title: OA context
+contexturl: http://178.79.168.194/ns/restoa.jsonld
 ---
 
 # Open Annotation context
@@ -26,8 +27,7 @@ are unambiguous, but too verbose for normal human use.
 
 Here's where the context comes in. It allows us to define that when we
 write `parent`, we mean `http://purl.org/vocab/relationship/parentOf`.
-The context allows us to avoid ambiguity when writing JSON objects
-such as
+The context allows us to avoid ambiguity when writing JSON-LD such as
 
     {
       "parent": "Eve",
@@ -40,13 +40,18 @@ such as the above with respect to a given context to produce documents
 such as
 
     {
-      "http://purl.org/vocab/relationship/parentOf": 
-          "http://example.org/people/Eve",
+      "http://purl.org/vocab/relationship/parentOf": "http://example.org/people/Eve",
       ...
     }
 
 and [compact](http://www.w3.org/TR/json-ld-api/#compaction) expanded
 documents to recover the short forms.
+
+So, in JSON-LD the keys (such as `parent` above) expand into full,
+globally unique URLs. It is also good practice to provide useful
+information on look-up, so that e.g.
+<http://purl.org/vocab/relationship/parentOf> gives the definition of
+"parent" relevant to the current context.
 
 ## Core OA context 
 
@@ -80,21 +85,25 @@ form can be expanded to the full URL
 
 The third line defines a similar expansion for `target`, adding also
 `"@type": "@id"`. This somewhat opaque piece of syntax simply means
-that the values of `target` are URLs. This is how JSON-LD adds
-hyperlinks to standard JSON, which lacks them.
+that the values of `target` are URLs. (This is how JSON-LD adds
+hyperlinks to standard JSON, which lacks them.)
 
 (See [data model](data-model.html) for definitions of `target` and
 `body`.)
 
 ## Full context definition
 
+<div class="alert alert-warning"><span style="font-weight:bold">Please
+note</span>: the context URL has been anonymized in the following. The
+recommended form is a PURL.</div>
+
 The full context definition for the RESTful Open Annotation API is
-available from <http://nlplab.org/ns/restoa-context-20150307.json>.
+available from <{{page.contexturl}}>.
 It is recommended that systems using the API use this context, for
 example by referencing it as follows:
 
     {
-      "@context": "http://nlplab.org/ns/restoa-context-20150307.json",
+      "@context": "{{page.contexturl}}",
       ...
     }
 
@@ -102,7 +111,7 @@ The bulk of this context is simply the [latest
 version](http://www.w3.org/TR/2014/WD-annotation-model-20141211/#json-ld-context)
 (Dec. 2014) derived from the [Open Annotation
 context](http://www.openannotation.org/spec/core/publishing.html) by
-the W3C [Web Annotation WG](http://www.w3.org/annotation/), which is
+the [W3C Web Annotation WG](http://www.w3.org/annotation/), which is
 carrying on the OA standardization effort.
 
 The OA context is presented in great detail in [Open
@@ -110,10 +119,11 @@ Annotation](http://www.openannotation.org/) and [Web Annotation
 WG](http://www.w3.org/annotation/) materials, so we won't give a
 detailed explanation here.
 
-Instead, we will describe the modest extensions that the RESTful Open
-Annotation API makes to the W3C working draft context. In brief, to
-implement the collection pattern frequently seen in RESTful APIs, we
-define a prefix for standard [link
+Instead, we simply present the modest extensions that the RESTful Open
+Annotation API makes to the W3C working draft context.
+
+In brief, to implement the collection pattern frequently seen in
+RESTful APIs, we define a prefix for standard [link
 relations](http://en.wikipedia.org/wiki/Link_relation)
 
     "lrel" :  "http://www.iana.org/assignments/link-relations/#"
@@ -127,3 +137,30 @@ follows:
     "item":          {"@type":"@id", "@id" : "lrel:item"},
     "collection":    {"@type":"@id", "@id" : "lrel:collection"},
 
+Servers implementing pagination ([see extensions](extensions.html))
+must use these terms to identify the URLs for the next, last, etc.
+pages of the collection.
+
+## Extending the context
+
+Applications may prefer to use also terms and prefixes not defined in
+the default context, for example using `Person` or `schema:Person` for
+[`http://schema.org/Person`](http://schema.org/Person).
+
+Rather than creating alternate versions of the recommended context, we
+strongly recommend that implementations use "mixin" contexts with the
+following pattern:
+
+    {
+      "@context": [
+        "{{page.contexturl}}",
+        "http://example.org/my-context.jsonld"
+      ],
+      ...
+    }
+
+[Multiple
+contexts](http://www.w3.org/TR/json-ld/#h3_advanced-context-usage) are
+a standard part of JSON-LD. Possible conflicts such as multiple
+definitions of a single term are resolved using the
+most-recent-definition-wins rule.

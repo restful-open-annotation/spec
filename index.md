@@ -21,4 +21,5 @@ We request reviewers to avoid related non-anonymous material.</div>
 * [OA context](context.html)
 * [Core API](api-core.html)
 * [Extensions](extensions.html)
-* [Tools](tools.html)
+<!-- * [Tools](tools.html) -->
+

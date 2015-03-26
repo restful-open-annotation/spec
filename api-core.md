@@ -11,9 +11,9 @@ presented on the [extensions page](extensions.html).
 
 ## Overview
 
-The core API defines a single collection resource, `annotations`. This
-collection and the individual `annotation` resources it contains can be
-manipulated using [HTTP
+The core API defines two resouce types, the collection resource
+`annotations` and individual `annotation` resources contained in these
+collections. These resources can be manipulated using [HTTP
 methods](http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods)
 in the standard way:
 
@@ -33,7 +33,7 @@ methods.
 
 The default content type is `application/ld+json`, and all servers
 must accept JSON-LD data and provide responses in JSON-LD when
-requests specify that it is preferred.
+requests specify that it is preferred (using the `Accept` header).
 
 The JSON-LD context defined in the [context
 documentation](context.html) is used to represent both annotations and
@@ -73,6 +73,14 @@ Example response:
       "body": "Person",
     }
 
+Notes:
+
+* Relative URLs such as `/annotations/123` are allowed. Relative
+  annotations are interpreted relative to the request base URL.
+* Servers are strongly recommended to establish exactly one canonical
+  URL for each resource and only use relative URLs when the request
+  base matches a prefix of a canonical URL.
+
 ## PUT annotation
 
 Update an annotation.
@@ -108,7 +116,8 @@ Example response:
 
 Notes:
 
-* `@id` is optional, but must match the request URL if provided.
+* `@id` is optional. If provided, it must match the request URL. If not,
+  the server must fill it in based on the request URL for the response.
 * The server may modify the submitted representation, for example by
   filling in `@id` or `annotatedBy`.
 
@@ -200,6 +209,12 @@ Example response:
       "target": "/documents/456#char=42,48",
       "body": "Person"
     }
+
+Notes:
+
+* Clients may optionally provide an `@id` representing a preferred URL
+  for the new annotation. Servers must allow but may ignore
+  client-provided `@id` values.
 
 ## Extensions
 
