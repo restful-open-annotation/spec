@@ -13,7 +13,7 @@ created for review purposes. The original, non-anonymous specification
 is developed openly, and is trivial to find e.g. with any search engine.
 We request reviewers to avoid related non-anonymous material.</div>
 
-Contents:
+#### Contents
 
 * [Quickstart](quickstart.html)
 * [Data model](data-model.html)
