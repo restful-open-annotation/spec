@@ -23,7 +23,6 @@ Basic annotations are simple:
       "@id": "{{page.apibase}}/annotations/1",
       "target": "http://en.wikipedia.org/wiki/Text_annotation#History"
       "body": "Some history of text annotation",
-      ...
     }
 
 This page shows how to get started using the API though a series of
@@ -63,17 +62,18 @@ the following request:
 Response:
 
     {
+      ...
       "@id": "{{page.apibase}}/annotations/1",
-      "target": "http://en.wikipedia.org/wiki/Text_annotation#History"
       "body": "Some history of text annotation",
+      "target": "http://en.wikipedia.org/wiki/Text_annotation#History"
       ...
     }
 
 (Parts omitted for brevity.) These fields are:
 
 * `@id`: the globally unique identifier of the annotation.
-* `target`: the thing that is annotated, here a fragment (`#History`) of a Wikipedia article.
 * `body`: the information that the target is annotated with, here a short text string.
+* `target`: the thing that is annotated, here a fragment (`#History`) of a Wikipedia article.
 
 Note that the values of `@id` and `target` are HTTP URIs that you can
 look up to get useful information.
@@ -146,12 +146,12 @@ document, here identified using `@context`.
 The server will respond to the above request with
 
     {
+      ...
       "@id": "{{page.apibase}}/annotations/2",
       "@type": "oa:Annotation",
-      "target": "http://en.wikipedia.org/wiki/Linked_data",
       "annotatedAt": "2015-03-01T16:27:56",
       "serializedAt": "2015-03-01T16:27:56",
-      ...
+      "target": "http://en.wikipedia.org/wiki/Linked_data",
     }
 
 (The `@id` will have a different number when you run this. Please
@@ -176,7 +176,7 @@ Previously created annotations can be updated with PUT.
 
 Request:
 
-    curl -X PUT -H 'Content-Type: application/ld+json'-d '
+    curl -X PUT -H 'Content-Type: application/ld+json' -d '
     {
       "@context": "{{page.server}}/ns/restoa.jsonld",
       "target": "http://en.wikipedia.org/wiki/Annotation"
